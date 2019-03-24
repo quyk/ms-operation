@@ -8,6 +8,7 @@ namespace MS.Operation.Application.IoC.Providers
     {
         public static void Register(IServiceCollection serviceCollection)
         {
+            serviceCollection.AddTransient<IAccountService, AccountService>();
             serviceCollection.AddTransient<ITransferService, TransferService>();
         }
     }

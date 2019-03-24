@@ -7,6 +7,5 @@ namespace MS.Operation.Application.Interfaces
     {
         IList<Account> Get();
         Account GetByNumber(Account account);
-        bool Exist(Account account);
     }
 }
