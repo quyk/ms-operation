@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Validations\launch-schema.json" />
+    <None Remove="Validations\transfer-schema.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Validations\launch-schema.json">
+    <EmbeddedResource Include="Validations\transfer-schema.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

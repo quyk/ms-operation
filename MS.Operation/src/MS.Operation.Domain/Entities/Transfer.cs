@@ -2,7 +2,7 @@
 
 namespace MS.Operation.Domain.Entities
 {
-    public class Launch
+    public class Transfer
     {
         [JsonProperty("origin")]
         public Account Origin { get; set; }
