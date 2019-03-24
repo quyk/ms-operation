@@ -8,7 +8,6 @@ namespace MS.Operation.Domain.Entities
         public int Number { get; set; }
         [JsonProperty("balance", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public double Balance { get; set; }
-        [JsonIgnore]
         public bool Limit { get; set; }
     }
 }

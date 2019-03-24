@@ -9,6 +9,6 @@ namespace MS.Operation.Domain.Entities
         [JsonProperty("destination")]
         public Account Destination { get; set; }
         [JsonProperty("value")]
-        public float Value { get; set; }
+        public double Value { get; set; }
     }
 }
