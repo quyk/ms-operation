@@ -20,24 +20,17 @@ namespace MS.Operation.Application.Services
         {
             if (transfer != null)
             {
-                var originIsValid = _accountRepository.Exist(transfer.Origin);
-                var destination = _accountRepository.Exist(transfer.Destination);
+                if (_accountRepository.Exist(transfer.Origin))
+                {
+                    if (_accountRepository.Exist(transfer.Destination))
+                    {
+                        return _transferRepository.Transfer(transfer);
+                    }
 
-                if (originIsValid && destination)
-                {
-                    return _transferRepository.Transfer(transfer);
+                    return OperationStatus.InvalidDestinationAccount;
                 }
-                else
-                {
-                    if (!originIsValid)
-                    {
-                        return OperationStatus.InvalidOriginAccount;
-                    }
-                    else
-                    {
-                        return OperationStatus.InvalidDestinationAccount;
-                    }
-                }
+
+               return OperationStatus.InvalidOriginAccount;
             }
 
             return OperationStatus.InvalidData;
